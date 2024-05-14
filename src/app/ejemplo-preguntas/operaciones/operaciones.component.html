@@ -1,0 +1,23 @@
+<form [formGroup] = "miformulario" (ngSubmit)="onSubmit()">
+  <label for="id">ID del vehiculo </label>
+  <input [readonly]="true" id="id" type="number"  formControlName="id">
+  <br><br>
+  <label for="nombre">nombre</label>
+  <input id="nombre" type="text" formControlName="nombre">
+  <br><br>
+  <label for="stock">stock</label>
+  <input id="stock" type="text" formControlName="stock">
+  <br><br>
+  <label for="fecha_venta">fecha de venta </label>
+  <input id="fecha_venta" type="date" formControlName="fecha_venta">
+  <br><br>
+  <label for="fecha_compra">fecha de compra </label>
+  <input id="fecha_compra" type="date" formControlName="fecha_compra">
+  <br><br>
+  <label for="edad">edad</label>
+  <input id="edad" type="number" formControlName="edad">
+  <br><br>
+  <button type="submit" [disabled]="!miformulario.valid">Enviar</button>
+  <button type="button" routerLink="">Cancelar</button>
+</form>
+<router-outlet></router-outlet>

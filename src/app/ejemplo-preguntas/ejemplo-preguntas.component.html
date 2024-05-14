@@ -1,0 +1,28 @@
+<h1>Ejemplo Formulario Mayo13</h1>
+<br><br>
+@for (item of concesioarios; track item.id) {
+    
+    
+      <table>
+            <tr>
+              <td>
+                <p></p>
+                <p><b>ID:</b> {{item.id }} | <b> Nombre: </b> {{ item.nombre}}</p>
+              </td>
+              <td>
+                <button type="button"  [routerLink]="['edicion', item.id]">Modificar</button>
+              </td>
+              <td>
+                <button type="button"  (click)="eliminar(item.id)">Eliminar</button>
+              </td>
+            </tr>
+          </table>
+          
+         
+      
+      
+  }
+  <br><br><br><br>
+  <button type="button" class="btn btn-primary" [routerLink]="['edicion']">Anadir</button>
+  <br><br><br><br>
+  <router-outlet></router-outlet>
